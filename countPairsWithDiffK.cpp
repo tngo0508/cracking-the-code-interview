@@ -12,7 +12,6 @@ int countPairsWithDiffK(int a[], int size, int k) {
     int hashTable[MAX] = {0};
     // throw everything in the array into the hash table
     for (int i = 0; i < size; i++) {
-        cout << size;
         hashTable[a[i]] = 1;
     }
 
@@ -22,6 +21,7 @@ int countPairsWithDiffK(int a[], int size, int k) {
     for (int i = 0; i < size; i++) {
         x = a[i];
         if (hashTable[x+k]) {
+            cout << "(" << x << ", " << x+k << ")" << endl;
             count++;
         }
     }
