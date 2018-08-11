@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <string>
 using namespace std;
 
@@ -16,7 +15,7 @@ bool isPermutationOfPalindrome(const string& str) {
     int idx = 0;
     for (const char& c : str)  {
         idx = getCharIdx(c);
-        if (idx != 1) {
+        if (idx != -1) {
             frequency[idx]++;
             if (frequency[idx] % 2) oddCount++;
             else oddCount--;
@@ -26,7 +25,8 @@ bool isPermutationOfPalindrome(const string& str) {
 }
 
 int main() {
-    string pal = "racecar";
+    string pal = "Tact Coa";
+    // string pal = "racecar";
     string isPermutation = isPermutationOfPalindrome(pal) ? "yes" : "no";
     cout << isPermutation << endl;
 
