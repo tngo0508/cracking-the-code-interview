@@ -8,7 +8,7 @@ def pal_perm(string):
         val_char = char_number(char)
         if val_char != -1:
             table[val_char] += 1
-            if table[val_char] % 2 == 1:
+            if table[val_char] % 2:
                 count_odd += 1
             else:
                 count_odd -= 1
