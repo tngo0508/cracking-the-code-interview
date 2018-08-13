@@ -8,7 +8,7 @@ def rotate_matrix(matrix):
         for i in range(first, last):
             offset = i - first
             # save top
-            top = matrix[layer][i]
+            top = matrix[first][i]
 
             # left->top
             matrix[layer][i] = matrix[last-offset][first]
