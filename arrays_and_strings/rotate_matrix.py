@@ -11,7 +11,7 @@ def rotate_matrix(matrix):
             top = matrix[first][i]
 
             # left->top
-            matrix[layer][i] = matrix[last-offset][first]
+            matrix[first][i] = matrix[last-offset][first]
 
             # bottom->left
             matrix[last-offset][layer] = matrix[last][last-offset]
