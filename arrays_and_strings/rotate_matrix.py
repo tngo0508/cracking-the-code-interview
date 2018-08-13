@@ -6,21 +6,21 @@ def rotate_matrix(matrix):
     for layer in range(matrix_length / 2):
         first, last = layer, matrix_length-layer-1
         for i in range(first, last):
-            # offset = i - first
+            offset = i - first
             # save top
             top = matrix[layer][i]
 
             # left->top
-            matrix[layer][i] = matrix[-i-1][layer]
+            matrix[layer][i] = matrix[last-offset][first]
 
             # bottom->left
-            matrix[-i-1][layer] = matrix[-layer-1][-i-1]
+            matrix[last-offset][layer] = matrix[last][last-offset]
 
             # right->bottom
-            matrix[-layer-1][-i-1] = matrix[i][-layer-1]
+            matrix[last][last-offset] = matrix[i][last]
 
             # top->right
-            matrix[i][-layer-1] = top
+            matrix[i][last] = top
     return matrix
 
 
