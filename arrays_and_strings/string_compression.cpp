@@ -8,13 +8,15 @@ std::string compress(std::string str) {
         return str;
     }
     std::string out{""};
+    std::cout << out << '\n';
     int count = 1;
-    for (size_t i = 0; i < original_length; i++) {
+    for (size_t i = 1; i < original_length; i++) {
         if (str[i - 1] == str[i]) {
             count++;
         } else {
             out += str[i - 1];
             out += std::to_string(count);
+            std::cout << out << '\n';
             count = 1;
         }
         if (out.length() >= original_length) {
