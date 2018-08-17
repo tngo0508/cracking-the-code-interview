@@ -1,5 +1,6 @@
 import unittest
 
+
 def one_edit_away(str1, str2):
     """check if string is one edit away"""
     # lenth checks
@@ -18,13 +19,14 @@ def one_edit_away(str1, str2):
             if found:
                 return False
             found = True
-
-            if len(short_str) == len(long_str): # on replace, move shorter pointer
+            # on replace, move shorter pointer
+            if len(short_str) == len(long_str):
                 idx1 += 1
         else:
-            idx1 += 1 # if maching, move shorter pointer
-        idx2 += 1 # always move pointer for longer string
+            idx1 += 1  # if maching, move shorter pointer
+        idx2 += 1  # always move pointer for longer string
     return True
+
 
 class Test(unittest.TestCase):
     """docstring for test."""

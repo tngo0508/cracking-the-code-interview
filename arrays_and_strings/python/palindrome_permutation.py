@@ -1,5 +1,6 @@
 import unittest
 
+
 def pal_perm(string):
     """checks if a string is a permutation of a palindrome or not"""
     table = [0 for _ in range(ord('z') - ord('a') + 1)]
@@ -30,6 +31,7 @@ def char_number(char):
     elif val_upper_a <= val <= val_upper_z:
         return val - val_upper_a
     return -1
+
 
 class Test(unittest.TestCase):
     '''Test Cases'''

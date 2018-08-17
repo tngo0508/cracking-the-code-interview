@@ -1,6 +1,8 @@
-"""given two string, write a method to decide if one is permutation of the other"""
+"""given two string, write a method to decide if one is permutation
+of the other"""
 import unittest
 from collections import Counter
+
 
 def check_permutation(str1, str2):
     """check permutation"""
@@ -14,6 +16,7 @@ def check_permutation(str1, str2):
             return False
         counter[char] -= 1
     return True
+
 
 class Test(unittest.TestCase):
     """docstring for Test."""

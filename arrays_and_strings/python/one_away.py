@@ -1,5 +1,6 @@
 import unittest
 
+
 def one_away(str1, str2):
     """check if string is one edit away
     The lengths of the strings will indicate which of these you need to check
@@ -12,6 +13,7 @@ def one_away(str1, str2):
         return one_edit_insert(str2, str1)
     return False
 
+
 def one_edit_replace(str1, str2):
     """check if string is one edit away by replacing a character"""
     found = False
@@ -21,6 +23,7 @@ def one_edit_replace(str1, str2):
                 return False
             found = True
     return True
+
 
 def one_edit_insert(str1, str2):
     """check if string is one edit away by inserting/removing a character"""
@@ -69,6 +72,7 @@ class Test(unittest.TestCase):
         for [test_s1, test_s2, expected] in self.data:
             actual = one_away(test_s1, test_s2)
             self.assertEqual(actual, expected)
+
 
 if __name__ == '__main__':
     unittest.main()

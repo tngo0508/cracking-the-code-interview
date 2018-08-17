@@ -1,8 +1,9 @@
 """write a method to repace all spaces in a string with '%20'. You may assume
-that the string has sufficient space at the end to hold the additional characters,
-and that you are given the "true" length of the string.
+that the string has sufficient space at the end to hold the
+additional characters, and that you are given the "true" length of the string.
 """
 import unittest
+
 
 def urlify(string, length):
     """function replaces single space with %20 and removes trailing spaces"""
@@ -34,6 +35,7 @@ class Test(unittest.TestCase):
         for [test_string, length, expected] in self.data:
             actual = urlify(test_string, length)
             self.assertEqual(actual, expected)
+
 
 if __name__ == '__main__':
     unittest.main()

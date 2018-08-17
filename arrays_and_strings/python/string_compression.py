@@ -1,6 +1,7 @@
 """String compression problem"""
 import unittest
 
+
 def string_compression(string):
     """perform basic string compression using the counters of repeated
     characters
