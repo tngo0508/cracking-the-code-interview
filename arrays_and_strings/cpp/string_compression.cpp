@@ -15,7 +15,6 @@ std::string compress(std::string str) {
         } else {
             out += str[i - 1];
             out += std::to_string(count);
-            std::cout << out << '\n';
             count = 1;
         }
         if (out.length() >= original_length) {
