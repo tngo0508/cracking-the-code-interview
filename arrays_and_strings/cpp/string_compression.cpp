@@ -8,7 +8,6 @@ std::string compress(std::string str) {
         return str;
     }
     std::string out{""};
-    std::cout << out << '\n';
     int count = 1;
     for (size_t i = 1; i < original_length; i++) {
         if (str[i - 1] == str[i]) {
