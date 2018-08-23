@@ -30,7 +30,11 @@ static inline int random_range(const int min, const int max) {
     return distribution(mt);
 };
 
-void removeDuplicates(Node * head) {
+// method 1
+// space complexity O(1)
+// time complexity O(n^2)
+// Remove duplicates wihout using a temporary buffer
+void removeDuplicates_wihout_buffer(Node * head) {
     if (head == nullptr || (head && (head->next == nullptr))) {
         return;
     }
@@ -48,9 +52,46 @@ void removeDuplicates(Node * head) {
     }
 }
 
+/*
+    method 2
+    space - O(n)
+    time - O(n)
+    Remove duplicates by using hash table
+*/
+void removeDuplicates(Node * head) {
+    if (head == nullptr || (head && (head->next == nullptr))) {
+        return;
+    }
+
+    std::unordered_map<int, int> node_map;
+    Node * prev = head;
+    Node * curr = head->next;
+    node_map[head->data] = 1;
+    while (curr != nullptr) {
+        while (curr && node_map.find(curr->data) != node_map.end()) {
+            curr = curr->next;
+        }
+        prev->next = curr;
+        prev = curr;
+        if (curr) {
+            node_map[curr->data] = 1;
+            curr = curr->next;
+        }
+    }
+};
+
 int main() {
-    std::cout << "Method1: " << '\n';
+    std::cout << "Method 1: " << '\n';
     Node * head = nullptr;
+    for (int i = 0; i < 10; i++) {
+        insert(head, random_range(1, 7));
+    }
+    printList(head);
+    removeDuplicates_wihout_buffer(head);
+    printList(head);
+
+    std::cout << "Method 2: " << '\n';
+    head = nullptr;
     for (int i = 0; i < 10; i++) {
         insert(head, random_range(1, 7));
     }
