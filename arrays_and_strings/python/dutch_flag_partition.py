@@ -1,5 +1,4 @@
 import unittest
-RED, WHITE, BLUE = range(3)
 
 
 def dutch_flag_partition1(pivot_index, A):
